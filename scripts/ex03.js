@@ -3,30 +3,24 @@ function empresaMaer (){
     let gastoTotal = 0;
 
     for (let mes = 1; mes <= 12; mes++){
-       let ganho = parseFloat(prompt("Digite o ganho do mês " + mes + ":"));
-       let gasto = parseFloat(prompt("Digite o gasto do mês " + mes + ":"));
+        let ganho = parseFloat(prompt("Digite o ganho do mês " + mes + ":"));
+        let gasto = parseFloat(prompt("Digite o gasto do mês " + mes + ":"));
 
-       if (isNaN(ganho) || isNaN(gasto)) {
-           alert("Digite apenas números!");
-           mes--; // repete o mês
-           continue;
-       }
-
-       ganhoTotal += ganho;
-       gastoTotal += gasto;
+        ganhoTotal += ganho;
+        gastoTotal += gasto;
     }
 
     let saldo = ganhoTotal - gastoTotal;
 
-    console.log("Ganho anual: " + ganhoTotal);
+    console.log("Ganho bruto anual: " + ganhoTotal);
     console.log("Gasto anual: " + gastoTotal);
-    console.log("Saldo anual: " + saldo);
+    console.log("Saldo financeiro anual: " + saldo);
 
     if (saldo > 0) {
-        alert("Lucro");
+        alert("A empresa teve lucro");
     } else if (saldo < 0) {
-        alert("Prejuízo");
+        alert("A empresa teve prejuízo");
     } else {
-        alert("Saldo zerado");
+        alert("A empresa não teve lucro nem prejuízo");
     }
 }
